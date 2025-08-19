@@ -13,7 +13,7 @@ class CanvasDraw {
         this.canvasPadding = 30;
         this.xBarStep = 0;
         this.yBarStep = 0;
-        this.local = "https://chan3623.github.io/line_graph/";
+        this.local = "https://line-graph-server-1.onrender.com/";
         //this.kkms = "http://kkms4001.iptime.org:33050";
     }
 
