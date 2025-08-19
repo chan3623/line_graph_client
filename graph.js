@@ -1,4 +1,4 @@
-import { CONFIG } from './src/config.js';
+import { CONFIG } from './config.js';
 
 class CanvasDraw {
     constructor(name) {
