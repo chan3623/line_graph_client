@@ -1,3 +1,5 @@
+import { CONFIG } from './config.js';
+
 class CanvasDraw {
     constructor(name) {
         this.name = name;
@@ -13,7 +15,7 @@ class CanvasDraw {
         this.canvasPadding = 30;
         this.xBarStep = 0;
         this.yBarStep = 0;
-        this.local = $SERVER_HOST;
+        this.local = CONFIG.SERVER_HOST;
         //this.kkms = "http://kkms4001.iptime.org:33050";
     }
 
