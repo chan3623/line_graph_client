@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Line-Graph</title>
+    <base href="/line_graph/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@500&family=Karla:wght@200&family=Noto+Sans+KR:wght@100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="icon" href="./img/xr3bSopc.ico">
+    <link rel="stylesheet" href="/line_graph/graph.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.5/xlsx.full.min.js"></script>
+    <script defer src="/line_graph/graph.js"></script>
+</head>
+
+<body>
+    <button id="modalBtn" class="modalBtn"></button>
+    <div id="modal" class="modal">
+        <div class="modalBox">
+            <button id="modalClear" class="modalClearBtn"></button>
+            <div class="restBox excelBox">
+                <input type="file" id="fileInput" class="fileInput">
+                <button type="button" id="changeBtn" class="changeBtn">변환</button>
+                <a href="./sampleData.xlsx" download="">
+                    <button type="button" class="changeBtn">엑셀 샘플</button>
+                </a>
+            </div>
+            <div class="restBox postBox">
+                POST<input id="postInput2" class="postInput" type="text" value="" placeholder=" 생성할 이름 입력" />
+                <input id="postInput3" class="postInput" type="number" min="0" max="100" maxlength="3" value=""
+                    placeholder=" 점수 입력" />
+                <button id="postBtn" type="button" class="postBtn">생성</button>
+            </div>
+            <div class="restBox patchBox">
+                PATCH<input id="patchInput" class="patchInput" type="text" value="" placeholder=" 변경할 이름 입력" />
+                <input id="patchInput2" class="patchInput" type="text" value="" placeholder=" 새로운 이름 입력" />
+                <input id="patchInput3" class="patchInput" type="number" min="0" max="100" maxlength="3" value=""
+                    placeholder=" 새로운 점수 입력" />
+                <button id="patchBtn" type="button" class="patchBtn">수정</button>
+            </div>
+            <div class="restBox deleteBox">
+                DELETE<input id="deleteInput" class="deleteInput" type="text" value="" placeholder=" 삭제할 이름 입력" />
+                <button id="deleteBtn" type="button" class="deleteBtn">삭제</button>
+            </div>
+        </div>
+    </div>
+    <div class="manualBox">
+        <button class="manualBtn" id="manualBtn">수동 데이터 입력</button>
+    </div>
+    <div class="containerBox">
+        <canvas id="myCanvas" width="1200px" height="450px"></canvas>
+    </div>
+    <div>
+        <div id="infoBox" class="infoBox">
+            <div class="innerBox">
+                <div class="infoValueBox">
+                    <div id="aveBox" class="valueBox aveValueBox"></div>
+                    <button class="valueBtn aveBox" id="averageBtn">평균값</button>
+                </div>
+                <div class="infoValueBox">
+                    <div id="midBox" class="valueBox"></div>
+                    <button class="valueBtn midBox" id="midBtn">중위값</button>
+                </div>
+                <div class="infoValueBox">
+                    <div id="minBox" class="valueBox"></div>
+                    <button class="valueBtn minBox" id="minBtn">최소값</button>
+                </div>
+                <div class="infoValueBox">
+                    <div id="maxBox" class="valueBox"></div>
+                    <button class="valueBtn maxBox" id="maxBtn">최대값</button>
+                </div>
+                <div class="infoValueBox">
+                    <div id="modeBox" class="valueBox"></div>
+                    <button class="valueBtn modeBox" id="modeBtn">최빈값</button>
+                </div>
+                <div class="infoValueBox">
+                    <button class="clearBtn" id="clearBtn">초기화</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
