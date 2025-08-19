@@ -13,14 +13,14 @@ class CanvasDraw {
         this.canvasPadding = 30;
         this.xBarStep = 0;
         this.yBarStep = 0;
-        this.local = "https://line-graph-server-1.onrender.com";
+        this.local = $SERVER_HOST;
         //this.kkms = "http://kkms4001.iptime.org:33050";
     }
 
     fetchData() {
         // AJAX 요청을 생성합니다.
         const xhr = new XMLHttpRequest();
-        const url = `${this.local}/graphData`;
+        const url = `${this.local}`;
         xhr.onreadystatechange = () => {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 200) {
@@ -365,7 +365,7 @@ class ModalRest {
         (document.getElementById("postBtn").onclick = () => {
             if (0 <= postInput3.value && postInput3.value < 101 && postInput2.value.length !== 0) {
                 this.xhrStatus = 201;
-                this.xhr.open("POST", `${myC.local}/graphData`);
+                this.xhr.open("POST", `${myC.local}`);
                 this.xhr.setRequestHeader("Content-type", "application/json");
                 this.xhr.send(
                     JSON.stringify({
@@ -398,7 +398,7 @@ class ModalRest {
                     }
                 }
                 this.xhrStatus = 200;
-                this.xhr.open("PATCH", `${myC.local}/graphData/${nameToId}`);
+                this.xhr.open("PATCH", `${myC.local}/${nameToId}`);
                 this.xhr.setRequestHeader("Content-type", "application/json");
                 this.xhr.send(
                     JSON.stringify({
@@ -431,7 +431,7 @@ class ModalRest {
                     }
                 }
                 this.xhrStatus = 200;
-                this.xhr.open("DELETE", `${myC.local}/graphData/${nameToId}`);
+                this.xhr.open("DELETE", `${myC.local}/${nameToId}`);
                 this.xhr.setRequestHeader("Content-type", "application/json");
                 this.xhr.send();
                 this.modal.style.display = "none";
