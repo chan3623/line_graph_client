@@ -15,6 +15,7 @@ jobs:
       # 환경 변수 삽입
       - name: Set config.js
         run: |
+          mkdir -p src
           echo "export const CONFIG = { SERVER_HOST: '${{ secrets.SERVER_HOST }}' };" > src/config.js
 
       # GitHub Pages에 배포
